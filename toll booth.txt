@@ -1,0 +1,80 @@
+Imagine a tollbooth at a bridge.
+A car passing by the booth is expected to pay a toll.
+The tollbooth keeps the track of the number car that gone and total cash amount collected.
+
+Created a class tollbooth with the data member
+-total number of cars passed
+-total toll collected
+
+necessary member function are:
+
+1.A constructor that initializes both data member to zero.
+
+2.paying car(): when any cars passes through the tollbooth , that much toll gets added into total toll collected and total number of cars passed is incremented by one.
+
+3. nonpaying car(); increment the car total but adds nothing to cash total.
+
+4.display(); the total number car passed and total cash collected.
+
+
+
+
+Here is my prgm:
+
+
+
+#include<iostream.h>
+#include<conio.h>
+class toolbath
+{
+int noc,tot;
+public:tollbooth(int n=0,int t=0)
+       {
+       noc=n;
+       tot=t;
+       }
+       void pay()
+       {
+       int i;
+       noc++;
+       cout<<"\n Enter the amount to pay toll:-";
+       cin>>i;
+       tot=tot+i;
+       }
+       void non_pay()
+       {
+       noc++;
+       }
+       void display()
+       {
+       cout<<"\n Total number of car passed:-"<<noc;
+       cout<<"\n Total toll collected:-"<<tot;
+       }
+};
+int main()
+{
+int n,t,ans;
+char ch='y';
+clrscr();
+cout<<"\n Enter total number of car passed:-";
+cin>>n;
+cout<<"\n Enter total toll collected:-";
+cin>>t;
+tollbooth b(n,t);
+while(ch=='y'||ch=='Y')
+{
+cout<<"\n Enter the car type:-";
+cout<<"\n Press 1: for paying car";
+cout<<"\n Press 2: for non-paying car";
+cin>>ans;
+if(ans==1)
+b.pay();
+if(ans==2)
+b.non_pay();
+cout<<"\n Do you want to continue(Y|N):-";
+cin>>ch;
+}
+b.display();
+getch();
+return 0;
+}
